@@ -27,8 +27,8 @@ import static io.github.prolobjectlink.prolog.PrologTermType.STRUCTURE_TYPE;
 import static io.github.prolobjectlink.prolog.PrologTermType.VARIABLE_TYPE;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -41,8 +41,6 @@ import io.github.prolobjectlink.prolog.PrologList;
 import io.github.prolobjectlink.prolog.PrologStructure;
 import io.github.prolobjectlink.prolog.PrologTerm;
 import io.github.prolobjectlink.prolog.PrologVariable;
-import io.github.prolobjectlink.prolog.interprolog.xsb.XsbProlog;
-import io.github.prolobjectlink.prolog.interprolog.xsb.XsbPrologConverter;
 
 public class PrologProviderTest extends PrologBaseTest {
 
@@ -105,7 +103,7 @@ public class PrologProviderTest extends PrologBaseTest {
 
 	@Test
 	public final void testIsCompilant() {
-		assertFalse(provider.isCompliant());
+		assertTrue(provider.isCompliant());
 	}
 
 	@Test
@@ -195,8 +193,8 @@ public class PrologProviderTest extends PrologBaseTest {
 		assertEquals("[]/0", list.getIndicator());
 		assertEquals(0, list.getArity());
 
-		list = provider.newList((PrologTerm[])null);
-		assertEquals(provider.newList((PrologTerm[])null), list);
+		list = provider.newList((PrologTerm[]) null);
+		assertEquals(provider.newList((PrologTerm[]) null), list);
 		assertEquals(LIST_TYPE, list.getType());
 		assertEquals("[]", list.getFunctor());
 		assertEquals("[]/0", list.getIndicator());
@@ -319,8 +317,10 @@ public class PrologProviderTest extends PrologBaseTest {
 		assertEquals(provider.newStructure("digits", zero, one, two, three, four, five, six, seven, eight, nine),
 				structure);
 
-		PrologStructure complex_structure = (PrologStructure) provider.parseTerm("'digits structure'(0,1,2,3,4,5,6,7,8,9)");
-		assertEquals(provider.newStructure("'digits structure'", zero, one, two, three, four, five, six, seven, eight, nine),
+		PrologStructure complex_structure = (PrologStructure) provider
+				.parseTerm("'digits structure'(0,1,2,3,4,5,6,7,8,9)");
+		assertEquals(
+				provider.newStructure("'digits structure'", zero, one, two, three, four, five, six, seven, eight, nine),
 				complex_structure);
 
 		PrologTerm expression = provider.parseTerm("X+Y");
