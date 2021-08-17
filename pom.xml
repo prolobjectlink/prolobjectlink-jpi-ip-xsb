@@ -305,6 +305,7 @@
 				<artifactId>license-maven-plugin</artifactId>
 				<version>1.16</version>
 				<configuration>
+					<canUpdateCopyright>true</canUpdateCopyright>
 					<canUpdateDescription>true</canUpdateDescription>
 					<failOnMissingHeader>true</failOnMissingHeader>
 					<acceptPomPackaging>true</acceptPomPackaging>
@@ -513,7 +514,8 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.rat</groupId>
-				<artifactId>apache-rat-plugin</artifactId><version>0.13</version>
+				<artifactId>apache-rat-plugin</artifactId>
+				<version>0.13</version>
 				<executions>
 					<execution>
 						<phase>verify</phase>

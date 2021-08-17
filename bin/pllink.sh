@@ -4,7 +4,7 @@
 # #%L
 # prolobjectlink-jpi-ip-xsb
 # %%
-# Copyright (C) 2020 Prolobjectlink Project
+# Copyright (C) 2020 - 2021 Prolobjectlink Project
 # %%
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
