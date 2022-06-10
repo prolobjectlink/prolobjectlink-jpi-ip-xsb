@@ -2,7 +2,7 @@
  * #%L
  * prolobjectlink-jpi-ip-xsb
  * %%
- * Copyright (C) 2020 - 2021 Prolobjectlink Project
+ * Copyright (C) 2020 - 2022 Prolobjectlink Project
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,11 @@ public class XsbPrologEngine extends InterPrologEngine implements PrologEngine {
 
 	protected XsbPrologEngine(PrologProvider provider) {
 		super(provider);
+	}
+	
+	protected XsbPrologEngine(PrologProvider provider, String path) {
+		super(provider);
+		consult(path);
 	}
 
 	public final String getLicense() {

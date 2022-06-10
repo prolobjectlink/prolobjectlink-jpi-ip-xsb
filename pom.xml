@@ -6,7 +6,7 @@
 	<artifactId>prolobjectlink-jpi-ip-xsb</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>prolobjectlink-jpi-ip-xsb</name>
-	<packaging>bundle</packaging>
+<!-- 	<packaging>bundle</packaging> -->
 	<description>Java Prolog Interface implementation over InterProlog and XSB Prolog</description>
 
 	<url>https://prolobjectlink.github.io/${project.name}</url>
@@ -447,47 +447,47 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<version>2.3.7</version>
-				<configuration>
-					<instructions>
-						<Implementation-Title>${project.name}</Implementation-Title>
-						<Implementation-Version>${project.version}</Implementation-Version>
-						<Bundle-DocURL>${project.url}</Bundle-DocURL>
-						<Bundle-Name>XSB Java Prolog Interface Implementation</Bundle-Name>
-						<Export-Package>${project.groupId}.prolog.interprolog.xsb</Export-Package>
-						<Import-Package>javax.script;com.declarativa.interprolog;
-							com.declarativa.interprolog.util; com.igormaznitsa.prologparser;
-							com.igormaznitsa.prologparser.terms;
-							com.igormaznitsa.prologparser.tokenizer;com.xsb.interprolog;
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.felix</groupId> -->
+<!-- 				<artifactId>maven-bundle-plugin</artifactId> -->
+<!-- 				<extensions>true</extensions> -->
+<!-- 				<version>2.3.7</version> -->
+<!-- 				<configuration> -->
+<!-- 					<instructions> -->
+<!-- 						<Implementation-Title>${project.name}</Implementation-Title> -->
+<!-- 						<Implementation-Version>${project.version}</Implementation-Version> -->
+<!-- 						<Bundle-DocURL>${project.url}</Bundle-DocURL> -->
+<!-- 						<Bundle-Name>XSB Java Prolog Interface Implementation</Bundle-Name> -->
+<!-- 						<Export-Package>${project.groupId}.prolog.interprolog.xsb</Export-Package> -->
+<!-- 						<Import-Package>javax.script;com.declarativa.interprolog; -->
+<!-- 							com.declarativa.interprolog.util; com.igormaznitsa.prologparser; -->
+<!-- 							com.igormaznitsa.prologparser.terms; -->
+<!-- 							com.igormaznitsa.prologparser.tokenizer;com.xsb.interprolog; -->
 
-							javax.accessibility; javax.swing; javax.swing.border;
-							javax.swing.event; javax.swing.table; javax.swing.text;
-							javax.swing.text.rtf; javax.swing.tree; javax.swing.undo;
-							junit.framework; org.junit.runner;
+<!-- 							javax.accessibility; javax.swing; javax.swing.border; -->
+<!-- 							javax.swing.event; javax.swing.table; javax.swing.text; -->
+<!-- 							javax.swing.text.rtf; javax.swing.tree; javax.swing.undo; -->
+<!-- 							junit.framework; org.junit.runner; -->
 
-							${project.groupId}.*;provide:=true</Import-Package>
-						<Bundle-SymbolicName>${project.groupId}.prolog.interprolog.xsb.plugin;singleton:=true</Bundle-SymbolicName>
-						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
-						<Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>
-						<Embed-Directory>target/dependency</Embed-Directory>
-						<Embed-StripGroup>true</Embed-StripGroup>
-						<Embed-Transitive>true</Embed-Transitive>
-					</instructions>
-				</configuration>
-				<executions>
-					<execution>
-						<id>bundle-manifest</id>
-						<phase>install</phase>
-						<goals>
-							<goal>manifest</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+<!-- 							${project.groupId}.*;provide:=true</Import-Package> -->
+<!-- 						<Bundle-SymbolicName>${project.groupId}.prolog.interprolog.xsb.plugin;singleton:=true</Bundle-SymbolicName> -->
+<!-- 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment> -->
+<!-- 						<Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency> -->
+<!-- 						<Embed-Directory>target/dependency</Embed-Directory> -->
+<!-- 						<Embed-StripGroup>true</Embed-StripGroup> -->
+<!-- 						<Embed-Transitive>true</Embed-Transitive> -->
+<!-- 					</instructions> -->
+<!-- 				</configuration> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>bundle-manifest</id> -->
+<!-- 						<phase>install</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>manifest</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -575,37 +575,37 @@
 					<remoteTagging>false</remoteTagging>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.github.siom79.japicmp</groupId>
-				<artifactId>japicmp-maven-plugin</artifactId>
-				<version>0.15.3</version>
-				<configuration>
-					<oldVersion>
-						<dependency>
-							<groupId>${project.groupId}</groupId>
-							<artifactId>${project.artifactId}</artifactId>
-							<version>1.0</version>
-							<type>jar</type>
-						</dependency>
-					</oldVersion>
-					<newVersion>
-						<file>
-							<path>${project.build.directory}/${project.artifactId}-${project.version}.jar</path>
-						</file>
-					</newVersion>
-					<parameter>
-						<htmlTitle>Changelog API</htmlTitle>
-					</parameter>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>verify</phase>
-						<goals>
-							<goal>cmp</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.github.siom79.japicmp</groupId> -->
+<!-- 				<artifactId>japicmp-maven-plugin</artifactId> -->
+<!-- 				<version>0.15.3</version> -->
+<!-- 				<configuration> -->
+<!-- 					<oldVersion> -->
+<!-- 						<dependency> -->
+<!-- 							<groupId>${project.groupId}</groupId> -->
+<!-- 							<artifactId>${project.artifactId}</artifactId> -->
+<!-- 							<version>1.0</version> -->
+<!-- 							<type>jar</type> -->
+<!-- 						</dependency> -->
+<!-- 					</oldVersion> -->
+<!-- 					<newVersion> -->
+<!-- 						<file> -->
+<!-- 							<path>${project.build.directory}/${project.artifactId}-${project.version}.jar</path> -->
+<!-- 						</file> -->
+<!-- 					</newVersion> -->
+<!-- 					<parameter> -->
+<!-- 						<htmlTitle>Changelog API</htmlTitle> -->
+<!-- 					</parameter> -->
+<!-- 				</configuration> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<phase>verify</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>cmp</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
 
@@ -765,36 +765,36 @@
 					</reportSet>
 				</reportSets>
 			</plugin>
-			<plugin>
-				<groupId>com.github.siom79.japicmp</groupId>
-				<artifactId>japicmp-maven-plugin</artifactId>
-				<version>0.15.3</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>cmp-report</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-				<configuration>
-					<oldVersion>
-						<dependency>
-							<groupId>${project.groupId}</groupId>
-							<artifactId>${project.artifactId}</artifactId>
-							<version>1.0</version>
-							<type>jar</type>
-						</dependency>
-					</oldVersion>
-					<newVersion>
-						<file>
-							<path>${project.build.directory}/${project.artifactId}-${project.version}.jar</path>
-						</file>
-					</newVersion>
-					<parameter>
-						<htmlTitle>Changelog API</htmlTitle>
-					</parameter>
-				</configuration>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.github.siom79.japicmp</groupId> -->
+<!-- 				<artifactId>japicmp-maven-plugin</artifactId> -->
+<!-- 				<version>0.15.3</version> -->
+<!-- 				<reportSets> -->
+<!-- 					<reportSet> -->
+<!-- 						<reports> -->
+<!-- 							<report>cmp-report</report> -->
+<!-- 						</reports> -->
+<!-- 					</reportSet> -->
+<!-- 				</reportSets> -->
+<!-- 				<configuration> -->
+<!-- 					<oldVersion> -->
+<!-- 						<dependency> -->
+<!-- 							<groupId>${project.groupId}</groupId> -->
+<!-- 							<artifactId>${project.artifactId}</artifactId> -->
+<!-- 							<version>1.0</version> -->
+<!-- 							<type>jar</type> -->
+<!-- 						</dependency> -->
+<!-- 					</oldVersion> -->
+<!-- 					<newVersion> -->
+<!-- 						<file> -->
+<!-- 							<path>${project.build.directory}/${project.artifactId}-${project.version}.jar</path> -->
+<!-- 						</file> -->
+<!-- 					</newVersion> -->
+<!-- 					<parameter> -->
+<!-- 						<htmlTitle>Changelog API</htmlTitle> -->
+<!-- 					</parameter> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</reporting>
 

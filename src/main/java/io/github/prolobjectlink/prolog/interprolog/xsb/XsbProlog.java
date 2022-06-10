@@ -2,7 +2,7 @@
  * #%L
  * prolobjectlink-jpi-ip-xsb
  * %%
- * Copyright (C) 2020 - 2021 Prolobjectlink Project
+ * Copyright (C) 2020 - 2022 Prolobjectlink Project
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,7 @@ public class XsbProlog extends InterPrologProvider implements PrologProvider {
 		super(new XsbPrologConverter());
 	}
 
-	XsbProlog(PrologConverter<TermModel> converter) {
+	public XsbProlog(PrologConverter<TermModel> converter) {
 		super(converter);
 	}
 
