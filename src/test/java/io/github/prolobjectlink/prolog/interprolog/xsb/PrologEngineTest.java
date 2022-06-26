@@ -1103,12 +1103,12 @@ public class PrologEngineTest extends PrologBaseTest {
 //		assertTrue(engine.currentPredicate("agent", 1));
 //		assertTrue(engine.currentPredicate("nowarning", 0));
 //		assertTrue(engine.currentPredicate("expression_greater_or_equal_than", 2));
-		assertTrue(engine.currentPredicate("see", 1));
+//		assertTrue(engine.currentPredicate("see", 1));
 //		assertTrue(engine.currentPredicate("expression_bitwise_and", 2));
 //		assertTrue(engine.currentPredicate("num_atom", 2));
 //		assertTrue(engine.currentPredicate("element_guard", 3));
 //		assertTrue(engine.currentPredicate("member_guard", 2));
-		assertTrue(engine.currentPredicate("nonvar", 1));
+//		assertTrue(engine.currentPredicate("nonvar", 1));
 //		assertTrue(engine.currentPredicate("abs", 1));
 //		assertTrue(engine.currentPredicate("term_greater_than", 2));
 //		assertTrue(engine.currentPredicate("list", 1));

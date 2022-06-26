@@ -29,7 +29,6 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import io.github.prolobjectlink.prolog.PrologAtom;
@@ -221,10 +220,8 @@ public class PrologReferenceTest extends PrologBaseTest {
 	}
 
 	@Test
-	@Ignore
 	public void testHasIndicator() {
-		// reference number enough
-		assertTrue(ref.hasIndicator("22", 0));
+		assertTrue(ref.hasIndicator(ref.getFunctor(), 0));
 	}
 
 	@Test
