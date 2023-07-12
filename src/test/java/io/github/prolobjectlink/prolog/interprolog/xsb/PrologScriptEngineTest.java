@@ -35,17 +35,20 @@ import javax.script.SimpleScriptContext;
 import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore
+//@Ignore
 public class PrologScriptEngineTest extends PrologBaseTest {
 
 	private final Bindings bindings = new SimpleBindings();
 	private final ScriptEngine engine = manager.getEngineByName(provider.getName());
 
 	@Test
+	@Ignore
 	public void testCreateBindings() throws ScriptException {
 		Bindings b = engine.createBindings();
 		b.put("X", 42.0);
 		assertEquals(true, engine.eval("?- X == 42.0.", b));
+//		b.put("X", 8);
+//		assertEquals(true, engine.eval("?- X is 5+3."));
 	}
 
 	@Test
@@ -76,16 +79,18 @@ public class PrologScriptEngineTest extends PrologBaseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testSetBindingsBindingsInt() throws ScriptException {
 		bindings.put("X", 42.0);
 		engine.setBindings(bindings, ScriptContext.ENGINE_SCOPE);
-		assertEquals(true, engine.eval("?- X == 42.0.", bindings));
+		assertEquals(true, engine.eval("?- X = 42.0.", bindings));
 	}
 
 	@Test
+	@Ignore
 	public void testPutStringObject() throws ScriptException {
 		engine.put("X", 42.0);
-		assertEquals(true, engine.eval("?- X == 42.0."));
+		assertEquals(true, engine.eval("?- X == 42.0"));
 	}
 
 	@Test

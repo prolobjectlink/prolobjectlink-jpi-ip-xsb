@@ -47,7 +47,7 @@ public class PrologJavaTest extends PrologBaseTest {
 	@Ignore
 	public void test() {
 		PrologEngine engine = provider.newEngine();
-		PrologQuery query = engine.query("java_object( 'javax.swing.JFrame', ['frame with dialog'], F)");
+		PrologQuery query = engine.query("javaMessage('java.lang.System'-out,println(string('Hi Java')))");
 		Map<String, Object> m = query.oneVariablesResult();
 		assertEquals(JFrame.class, m.get("F").getClass());
 	}
